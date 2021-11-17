@@ -1,0 +1,2 @@
+In this paper, we proposed a mixed-precision quantization of U-Net for medical image segmentation. There are two main contributions in our work: A split convolution for  a fine-grained bitwidth allocation that addresses the difference between skip feature maps and up-sampled feature maps.  Furthermore,  we introduce supervision on skip connection for quantization aware training to compensate gradients in back  propagation and enhance the skip features in finetuning.  Extensive experiments are conducted to demonstrate the effectiveness of our proposed method.
+

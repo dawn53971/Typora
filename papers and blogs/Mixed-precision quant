@@ -1,0 +1,13 @@
+
+
+# 混合精度量化(Mixed-Precision Quantization)相关论文总结
+
+https://zhuanlan.zhihu.com/p/365272572
+
+## Mixed-Precision Quantized Neural Networks with Progressively Decreasing Bitwidth for Image Classification and Object Detection
+
+他的motivation的分析比method写的好，这篇文章做了一个分析实验，作者在CIFAR-10数据集上训练了一个VGG-7的模型，然后每个类别取50个样本，输入网络查看中间层输出的特征分布，其中高维数据的二位可视化采用的t-SNE方法
+
+<img src="C:\Users\admin\Documents\Typora\typora-pics\image-20211115211701593.png" alt="image-20211115211701593" style="zoom: 50%;" />
+
+可以发现前面的层不同类别之间特征混淆的非常严重，这个可以理解，毕竟大多是低级几何特征，而到了后面的层，不同类别之间的间隔逐渐增大，从而使得分类精度高且鲁棒。基于这个观测，作者认为浅层对量化更为敏感，因为他需要在不同类别重合度很高的特征空间中去识别分类，任务更为困难，而深层的类别特征已经有了一个比较明显的间隔，就不需要特别高的精度来表示，而且作者发现后面层的参数量占比也非常高，所以减少深层的bit-width会带来很高的压缩效益
