@@ -1,4 +1,4 @@
-: emoji   :smile:
+****: emoji   :smile:
 
 Typora 原生支持LaTeX语法，行内公式 inline $...$  块间公式$$...$$
 
@@ -78,5 +78,8 @@ Ctrl+Shift+M    公式块 Ctrl+Shift+Q    引用
 
 - [ ] 
 
-> ==Highlight== :smiley:  
+> ==Highlight== :smiley:    
 
+*斜体*
+
+**加粗**
